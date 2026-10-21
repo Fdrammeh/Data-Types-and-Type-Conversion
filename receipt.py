@@ -7,7 +7,7 @@ item2_price = "7.50"
 item2_qty = "1"
 
 item3_name = "Backpack"
-item3_price = "4.99"
+item3_price = "34.99"
 item3_qty = "1"
 
 tax_rate = "0.075" 
@@ -15,13 +15,13 @@ tax_rate = "0.075"
 
 
 item1_price = float(item1_price)
-item1_qty = float(item1_qty)
+item1_qty = int(item1_qty)
 
 item2_price = float(item2_price)
-item2_qty = float(item2_qty)
+item2_qty = int(item2_qty)
 
 item3_price = float(item3_price)
-item3_qty = float(item3_qty)
+item3_qty = int(item3_qty)
 
 tax_rate =float(tax_rate)
 
@@ -35,21 +35,33 @@ subtotal = item1_total + item2_total + item3_total
 tax_amount = subtotal * tax_rate
 grand_total = subtotal + tax_amount
 
-print(f"item: {item1_name}")
-print(f"price: ${item1_price} *{item1_qty} = {item1_total}")
+print("\n" + "=" *10 + "STORE RECEIPT" + "=" * 10 + "\n")
 
-print(f"tax ({tax_rate * 100}%): ${tax_amount:.2f}")
+# print(f"item: {item1_name}")
+# print(f"price: ${item1_price:.2f} *{item1_qty} = ${item1_total:.2f}")
+
+print(f"{item1_name}:${item1_price} x {item1_qty} = ${item1_total:.2f}")
+
+
+
+
+# print(f"item: {item2_name}:")
+# print(f"price: ${item2_price:.2f} *{item2_qty} = ${item2_total:.2f}")
+
+print(f"{item2_name}: ${item2_price:.2f} x {item2_qty} = ${item2_total:.2f}") 
+
+
+
+# print(f"item: {item3_name}")
+# print(f"price: ${item3_price} *{item3_qty} = ${item3_total}")
+
+print(f"{item3_name}:${item3_price} x {item3_qty} = ${item3_total:.2f}")
 
 print("=" * 40)
 
-print(f"item: {item2_name}")
-print(f"price: ${item2_price} *{item2_qty} = {item2_total}")
-
-print(f"tax ({tax_rate * 100}%): ${tax_amount:.2f}")
-
-print("=" * 40)
-
-print(f"item: {item3_name}")
-print(f"price: ${item3_price} *{item3_qty} = {item3_total}")
 print(f"subtotal: ${subtotal:.2f}")
 print(f"tax ({tax_rate * 100}%): ${tax_amount:.2f}")
+print("=" * 40)
+print(f"TOTAL: ${grand_total:.2f}")
+
+print("=" * 40)
